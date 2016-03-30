@@ -32,9 +32,6 @@ PRODUCT_PACKAGES += \
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Common Sony Resources
-$(call inherit-product, device/sony/common/resources.mk)
-
 # Inherit from hayabusa device
 $(call inherit-product, device/sony/hayabusa/hayabusa.mk)
 
