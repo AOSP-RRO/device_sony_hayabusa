@@ -14,10 +14,18 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := $(call my-dir)
+# Screen density
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-ifeq ($(TARGET_DEVICE),hayabusa)
+# Device specific overlays
+DEVICE_PACKAGE_OVERLAYS += device/sony/hayabusa/overlay
 
-include $(call first-makefiles-under,$(LOCAL_PATH))
+# Blue common product elements
+$(call inherit-product, device/sony/blue-common/common.mk)
 
-endif
+# Device product elements
+include $(LOCAL_PATH)/product/*.mk
+
+# Vendor product configurations
+$(call inherit-product, vendor/sony/hayabusa/hayabusa-vendor.mk)

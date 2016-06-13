@@ -1,33 +1,30 @@
-#inherit from the common blue definitions
+#
+# Copyright (C) 2015-2016 The CyanogenMod Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+# Inherit common blue board
 include device/sony/blue-common/BoardConfigCommon.mk
 
-TARGET_SPECIFIC_HEADER_PATH += device/sony/hayabusa/include
+# Device path
+DEVICE_PATH := device/sony/hayabusa
 
-TARGET_KERNEL_CONFIG := cm_blue_hayabusa_defconfig
+# Device headers
+TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
 
-# Partition information
-BOARD_VOLD_MAX_PARTITIONS := 18
+# Device board elements
+include $(DEVICE_PATH)/board/*.mk
 
-# the following two sizes are generous guesses
-# since these partitions are not visible
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01400000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x01400000
-
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1056964608
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 2147483648
-BOARD_FLASH_BLOCK_SIZE := 131072
-
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/hayabusa/bluetooth
-
-TARGET_LS_USE_ALS_NODE := true
-
-# Recovery
-BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_USERIMAGES_USE_EXT4 := true
-
-TARGET_OTA_ASSERT_DEVICE := lt29i,hayabusa,LT29i
-
-BOARD_HARDWARE_CLASS := device/sony/hayabusa/cmhw
-
-# inherit from the proprietary version
+# Device vendor board
 -include vendor/sony/hayabusa/BoardConfigVendor.mk

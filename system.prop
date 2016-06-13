@@ -1,8 +1,0 @@
-# Make keys in CWM repeatable
-ro.cwm.enable_key_repeat=true
-
-# Graphics
-ro.sf.lcd_density=320
-
-# By default, primary storage is physical
-ro.vold.primary_physical=1
