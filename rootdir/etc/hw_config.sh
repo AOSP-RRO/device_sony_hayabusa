@@ -1,3 +1,7 @@
+#!/bin/sh
+# hw_config.sh.
+# Used to set special parameters.
+
 # Audio jack configuration
 dev=/sys/devices/platform/msm_ssbi.0/pm8921-core/simple_remote_pf/simple_remote
 echo 0,301 > $dev/accessory_min_vals

@@ -1,8 +1,4 @@
 on boot
-    # Vibrator
-    chown system system /sys/class/timed_output/vibrator/level
-    chmod 666 /sys/class/timed_output/vibrator/level
-
     # Xperia logo light
     chown system system /sys/class/leds/logo-backlight_1/brightness
     chmod 660 /sys/class/leds/logo-backlight_1/brightness
