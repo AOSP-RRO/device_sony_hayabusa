@@ -1,10 +1,3 @@
-on boot
-    # Xperia logo light
-    chown system system /sys/class/leds/logo-backlight_1/brightness
-    chmod 660 /sys/class/leds/logo-backlight_1/brightness
-    chown system system /sys/class/leds/logo-backlight_2/brightness
-    chmod 660 /sys/class/leds/logo-backlight_2/brightness
-
 on post-fs
     # Touch firmware update
     # write /data/etc/touch_default_module_id 32
