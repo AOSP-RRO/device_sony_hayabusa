@@ -1,6 +1,7 @@
 Sony Xperia TX
 ==============
 
+
 The Sony Xperia TX (codenamed _"Hayabusa"_) is a flagship smartphone from Sony Mobile.
 
 It was announced on 29 August 2012.
